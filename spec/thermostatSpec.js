@@ -1,12 +1,12 @@
 'use strict';
 
-describe('Feature Test:', function(){
+describe('Thermostat:', function(){
   var thermostat;
 
   beforeEach(function(){
     thermostat = new Thermostat;
   });
-  it('thermostat starts at a default of 20',function(){
+  it('starts at default temperature of 20',function(){
     expect(thermostat.temp()).toBe(20)
   });
 });
