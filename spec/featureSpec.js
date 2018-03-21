@@ -34,5 +34,18 @@ describe('Feature Test:', function(){
     powerSaving.switch();
     expect(powerSaving.isOn()).toBe(false);
   });
-
+  describe("While powersaving is on", function(){
+    it('Thermostat has a max temp of 25 when Powersaving is on', function(){
+      spyOn(powerSaving, 'isOn').and.returnValue(true)
+      thermostat.up(5)
+      expect(function(){thermostat.up(1);}).toThrowError('Cannot exceed Maximum Temperature');
+    });
+  });
+  describe("While Powersaving is off", function(){
+    it('Thermostat has a max temp of 32 when Powersaving is off',function(){
+      spyOn(powerSaving, 'isOn').and.returnValue(false)
+      thermostat.up(12)
+      expect(function(){thermostat.up(1);}).toThrowError('Cannot exceed Maximum Temperature');
+    });
+  });
 });
