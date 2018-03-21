@@ -14,4 +14,8 @@ describe('Thermostat:', function(){
     thermostat.up(1);
     expect(thermostat.temp()).toBe(21);
   });
+  it('decreases the temperature with .down', function(){
+    thermostat.down(1);
+    expect(thermostat.temp()).toBe(19);
+  });
 });

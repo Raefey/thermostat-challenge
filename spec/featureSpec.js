@@ -14,4 +14,9 @@ describe('Feature Test:', function(){
     thermostat.up(1);
     expect(thermostat.temp()).toBe(21);
   });
+
+  it('thermostat can decrease temperature', function(){
+    thermostat.down(1);
+    expect(thermostat.temp()).toBe(19);
+  });
 });
