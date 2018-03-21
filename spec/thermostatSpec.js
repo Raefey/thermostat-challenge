@@ -18,4 +18,8 @@ describe('Thermostat:', function(){
     thermostat.down(1);
     expect(thermostat.temp()).toBe(19);
   });
+  it('has a minimum temperature of 10', function(){
+    thermostat.down(10);
+    expect(function(){thermostat.down(1);}).toThrowError('Minimum temperature is 10')
+  });
 });
