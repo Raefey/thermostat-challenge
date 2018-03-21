@@ -1,9 +1,13 @@
 'use strict';
 
 var Thermostat = function(){
-
+  this._temperature = 20;
 };
 
 Thermostat.prototype.temp = function(){
-  return 20
-}
+  return this._temperature;
+};
+
+Thermostat.prototype.up = function(number){
+  this._temperature += number;
+};

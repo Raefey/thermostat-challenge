@@ -9,4 +9,9 @@ describe('Feature Test:', function(){
   it('thermostat starts at a default of 20',function(){
     expect(thermostat.temp()).toBe(20)
   });
+
+  it('thermostat can increase temperature', function(){
+    thermostat.up(1);
+    expect(thermostat.temp()).toBe(21);
+  });
 });
